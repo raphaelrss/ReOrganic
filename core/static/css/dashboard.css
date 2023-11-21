@@ -1,0 +1,51 @@
+/* base */
+@import url(./base/global.css);
+@import url(./base/reset.css);
+
+/* layout */
+@import url(./layout/dashboard/sidebar.css);
+@import url(./layout/dashboard/header.css);
+@import url(./layout/dashboard/products.css);
+@import url(./layout/dashboard/inventory.css);
+@import url(./layout/dashboard/notifications.css);
+@import url(./layout/dashboard/client.css);
+@import url(./layout/dashboard/faq.css);
+@import url(./layout/dashboard/news.css);
+
+/* components */
+@import url(./components/modal.css);
+@import url(./components/button-modal.css);
+@import url(./components/button.css);
+@import url(./components/input.css);
+@import url(./components/logo.css);
+
+body {
+  min-height: 100vh;
+  background-color: var(--body-color);
+  transition: all 0.3s ease;
+  font-family: var(--secundary-font);
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+body.dark {
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #3a3b3c;
+  --primary-color-light: #3a3b3c;
+  --border-color: #000000;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+  --active-sidebar: #ccc;
+  --span-logo-dashboard: #fff;
+  --price-text-color: #2d2d2d;
+}
+
+.section-Dashboard {
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.4rem 7rem;
+}

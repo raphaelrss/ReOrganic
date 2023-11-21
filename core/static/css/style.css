@@ -1,0 +1,131 @@
+/* base */
+@import url(./base/reset.css);
+@import url(./base/global.css);
+/* lading page */
+@import url(./layout/landing_page/header.css);
+@import url(./layout/landing_page/home.css);
+@import url(./layout/landing_page/benefits.css);
+@import url(./layout/landing_page/about.css);
+@import url(./layout/landing_page/services.css);
+@import url(./layout/landing_page/contacts.css);
+@import url(./layout/landing_page/contacts.css);
+@import url(./layout/landing_page/footer.css);
+
+/* components */
+@import url(./components/menu-toggle.css);
+@import url(./components/button.css);
+@import url(./components/logo.css);
+
+.about,
+.services,
+.contact {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 4.8rem;
+  text-align: center;
+  padding-top: 15rem;
+}
+
+.about__title,
+.services__title,
+.contact__title {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: var(--sidebar-color);
+  text-transform: uppercase;
+}
+
+.about__subtitle,
+.services__subtitle {
+  font-size: 5.8rem;
+  font-weight: bold;
+  line-height: 110%;
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 1080px) {
+  .about__subtitle {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .about,
+  .services,
+  .contact {
+    padding: 0 3.2rem;
+    padding-top: 11rem;
+  }
+
+  .about__title,
+  .services__title,
+  .contact__title {
+    font-size: 2.6rem;
+  }
+
+  .about__subtitle,
+  .services__subtitle {
+    font-size: 4.8rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .about__title,
+  .services__title,
+  .contact__title {
+    font-size: 2.1rem;
+  }
+
+  .about__subtitle,
+  .services__subtitle {
+    font-size: 3.6rem;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about,
+  .services,
+  .contact {
+    padding: 0 2.4rem;
+    padding-top: 8rem;
+  }
+  .about__subtitle,
+  .services__subtitle {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about,
+  .services,
+  .contact {
+    padding: 0 1.2rem;
+    padding-top: 6rem;
+  }
+
+  .about__title,
+  .services__title,
+  .contact__title {
+    font-size: 1.6rem;
+  }
+
+  .about__subtitle,
+  .services__subtitle {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .about__title,
+  .services__title,
+  .contact__title {
+    font-size: 1.5rem;
+  }
+  .about__subtitle,
+  .services__subtitle {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+}

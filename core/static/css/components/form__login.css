@@ -1,0 +1,59 @@
+.form-section {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--body-color);
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__logo {
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  font-size: 2.8rem;
+}
+
+.form-section__container {
+  background-color: var(--primary-color-light);
+  width: 100%;
+  max-width: 350px;
+
+  padding: 3rem;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form__termos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--body-color);
+}
+
+.form__login {
+  color: var(--body-color);
+  font-size: 1.2rem;
+}
+
+.form__login--l {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-section__container--sm {
+  max-width: 300px;
+}
+
+.form__icon {
+  font-size: 1.6rem;
+}

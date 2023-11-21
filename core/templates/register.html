@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="../assets/css/register.css" />
+
+    <!----===== Boxicons CSS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesomen : biblioteca de ícones-->
+    <script
+      src="https://kit.fontawesome.com/8ec406ee8f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>ReOrganic</title>
+  </head>
+  <body>
+    <div class="form-section">
+      <form class="form-section__container">
+        <div class="form__logo logo">
+          Re<span class="logo__span--login">Organic</span>
+        </div>
+        <input
+          class="input"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Nome"
+          required
+        />
+
+        <input
+          class="input"
+          type="text"
+          name="sobrenome"
+          id="sobrenome"
+          placeholder="Sobrenome"
+          required
+        />
+
+        <input
+          class="input"
+          type="text"
+          name="email"
+          id="email"
+          placeholder="E-mail"
+          required
+        />
+
+        <input
+          class="input"
+          type="text"
+          name="password"
+          id="password"
+          placeholder="Senha"
+          required
+        />
+        <label for="termos" class="form__termos">
+          <input type="checkbox" name="termos" />
+          Eu aceito os termos e condições
+        </label>
+
+        <button class="form__btn">Cadastre-se</button>
+        <a href="./login.html" class="form__login">Já possui uma conta?</a>
+      </form>
+    </div>
+  </body>
+</html>

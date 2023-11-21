@@ -1,0 +1,71 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-Dashboard products">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link select" href="#">Materiais</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por materiais"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!--Modal-->
+      <div id="fade" class="hide modal__fade"></div>
+      <div id="modal" class="hide modal">
+        <div class="modal__body">
+          <div class="modal__img-box">
+            <img
+              class="modal__img"
+              src="../assets/img/dashboard/fruits/lettuce.png"
+              alt=""
+            />
+            <button id="close-modal" class="modal__btn">Fechar</button>
+          </div>
+
+          <div class="modal__info-box">
+            <div class="info-box__info">
+              <h6 class="info__title">Temperatura de Armazenamento</h6>
+              <p class="info__text">15°C</p>
+            </div>
+
+            <div class="info-box__info">
+              <h6 class="info__title">Tempo de Armazenamento</h6>
+              <p class="info__text">3 - 4 Semanas</p>
+            </div>
+
+            <div class="info-box__info">
+              <h6 class="info__title">Umidade Relativa</h6>
+              <p class="info__text">90% - 95%</p>
+            </div>
+
+            <div class="info-box__info">
+              <h6 class="info__title">Perda de Peso</h6>
+              <p class="info__text">5,2%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="food" class="products__cards-box">
+        <!--Produtos serão adicionados nesse container via javascript buscando direto do banco de dados-->
+      </div>
+    </section>
+
+{% endblock %}

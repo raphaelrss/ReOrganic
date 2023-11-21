@@ -1,0 +1,125 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-Dashboard notification">
+      <header class="section-Dashboard__header">
+        <h5 class="notifications__title">
+          <i class="bx bx-chevron-right title__icon"></i> Lembretes (3)
+        </h5>
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por Lembretes"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+
+
+
+          <a
+            id="notification__btn"
+            class="button button--xl inventory__btn notification__btn"
+            >Criar Lembretes</a
+          >
+        </div>
+      </header>
+
+      <!--Modal-->
+      <div id="fadeNewNotification" class="hide modal__fade"></div>
+      <div
+        id="modalNewNotification"
+        class="hide modal modal--modalNewInventory"
+      >
+        <div class="modal__body modalInventory__body">
+          <div class="modalInventory__content">
+            <div class="modalInventory__input-box">
+              <label class="input-box__label label--xl" for="lembrete"
+                >Novo Lembrete</label
+              >
+              <input
+                class="input input--green input--negrito"
+                type="text"
+                name="lembrete"
+                placeholder="Digite sua mensagem de Lembrete"
+                required
+              />
+            </div>
+            <div class="modalInventory__btn-box">
+              <button id="" class="modal__btn_confirm">CRIAR</button>
+              <button id="close-modal-newnotification" class="modal__btn_close">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inventory__content">
+        <div class="notification__item">
+          <div class="inventory__info">
+            <div class="notification__text-box">
+              <h6 class="notification__title">
+                Resto de frutas - Lote: 025365
+              </h6>
+              <div class="notification__subtitle">
+                <p>
+                  Seus restos de frutas estão armazenado há 63 dias - Prazo Máximo:
+                  210 dias
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__exit">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="notification__item">
+          <div class="inventory__info">
+            <div class="notification__text-box">
+              <h6 class="notification__title">
+                Migalhas de pão - Lote: 036347
+              </h6>
+              <div class="notification__subtitle">
+                <p>
+                  Atenção! Seu estoque de migalhas de pão já está armazenado a 85 dias,
+                  e está prestes a sofrer perdas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__exit">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="notification__item">
+          <div class="inventory__info">
+            <div class="notification__text-box">
+              <h6 class="notification__title">Mensagem de Gabriel</h6>
+              <div class="notification__subtitle">
+                <p>Seu Cliente Gabriel mandou mensagem pra você.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__exit">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

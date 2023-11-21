@@ -1,0 +1,46 @@
+.input {
+  background: var(--body-color);
+  border-radius: 1px;
+  outline: none;
+  padding: 1.6rem;
+  margin-bottom: 1rem;
+  color: black;
+  opacity: 0.9;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  width: 100%;
+  display: block;
+}
+
+.input--margin-l {
+  margin-bottom: 2rem;
+}
+
+.input--green::placeholder,
+option {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.input--negrito::placeholder {
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .contact__content {
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  .input {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .input {
+    padding: 1.4rem;
+    font-size: 1.4rem;
+  }
+}

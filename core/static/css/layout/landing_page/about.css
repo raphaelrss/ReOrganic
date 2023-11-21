@@ -1,0 +1,147 @@
+.about__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.about__text {
+  font-size: 2.4rem;
+  font-weight: 400;
+
+  text-align: justify;
+}
+
+.about__cards-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem 2rem;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+}
+
+.about__card-item {
+  width: 220px;
+  height: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+
+  background-color:white;
+  padding: 2rem;
+  border-radius: 3rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-item__img-box {
+  position: absolute;
+  top: -50px;
+}
+
+.img-box__shape {
+  width: 200px;
+}
+
+.img-box__img {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 120px;
+
+  border-radius: 50%;
+}
+
+.card-item__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.card-item__stacks {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.card-item__socials {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  font-size: 3.2rem;
+}
+
+.socials__github {
+  color: var(--primary-color);
+}
+
+.socials__linkedin {
+  width: 32px;
+  height: 32px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.socials__linkedin,
+.socials__github {
+  cursor: pointer;
+}
+
+.card-item__socials > a {
+  font-size: 3.2rem;
+}
+
+@media (max-width: 1200px) {
+  .about__text {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 1120px) {
+  .about__content {
+    gap: 2rem;
+  }
+  .about__img {
+    width: 450px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .about__content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__text {
+    font-size: 2rem;
+  }
+
+  .about__img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .about__text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .about__text {
+    font-size: 1.6rem;
+  }
+}

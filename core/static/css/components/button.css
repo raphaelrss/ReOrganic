@@ -1,0 +1,43 @@
+.button {
+  color: var(--body-color);
+  font-size: 2rem;
+  font-weight: 500;
+
+  padding: 1.2rem 9.2rem;
+  border: none;
+  border-radius: 30px;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  background-color: var(--sidebar-color);
+}
+
+.button:hover {
+  background-color: var(--sidebar-color);
+  opacity: 0.9;
+}
+
+.button--md {
+  font-size: 1.6rem;
+  padding: 1rem 3rem;
+}
+
+.button--xl {
+  text-align: center;
+  width: 250px;
+  font-size: 1.4rem;
+  padding: 1.4rem 1rem;
+}
+
+@media (max-width: 640px) {
+  .button {
+    font-size: 1.8rem;
+    padding: 1rem 8.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    font-size: 1.6rem;
+    padding: 0.8rem 8rem;
+  }
+}

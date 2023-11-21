@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background-color: #EBD6C8;
+  --primary-color: #63994B;
+  --secundary-color: #e3fdd8;
+  --text-white: #f9f5ff;
+  --text-black: #2d2d2d;
+  --check-icon-color: #6be381;
+  --hover: #00670f;
+  --btn-hover: #00ac1a;
+
+  --logo-dashboard: #63994b;
+  --span-logo-dashboard: #656565;
+
+  --span-logo: #656565;
+
+  --primary-font: 'Poppins', sans-serif;
+  --secundary-font: 'Poppins', sans-serif;
+
+  /* Dashboard */
+  --body-color: #EBD6C8;
+  --sidebar-color: #1A3129;
+  --primary-color-light: #1A3129;
+  --toggle-color: #707070;
+  --text-color: #707070;
+  --border-color: #2d2d2d;
+  --active-sidebar: #707070;
+  --price-text-color: #707070;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-family: var(--secundary-font);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: var(--background-color);
+  color: var(--text-black);
+  font-family: var(--primary-font);
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}

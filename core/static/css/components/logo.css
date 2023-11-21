@@ -1,0 +1,31 @@
+.logo {
+  font-weight: 700;
+}
+
+.logo__span {
+  color: var(--body-color);
+}
+
+.header.scroll .logo__span {
+  color: var(--body-color);
+}
+
+.logo--footer {
+  color: var(--primary-color);
+}
+
+.logo__span--footer {
+  color: var(--body-color);
+}
+
+.logo__span--login {
+  color: var(--body-color);
+}
+
+.logo.logo--dashboard {
+  color: var(--logo-dashboard);
+}
+
+.logo__span--dashboard {
+  color: var(--span-logo-dashboard);
+}

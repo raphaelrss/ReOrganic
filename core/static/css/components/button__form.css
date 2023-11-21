@@ -1,0 +1,28 @@
+.form__btn {
+  padding: 1.2rem;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  border-radius: 30px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.form__btn--margin-l {
+  margin-bottom: 1.2rem;
+}
+
+.form__btn--blue {
+  background-color: #09008a;
+}
+
+.form__btn--gray {
+  background-color: #d2d2d2;
+  color: #000000;
+}

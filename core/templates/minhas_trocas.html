@@ -1,0 +1,344 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="section-Dashboard inventory">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation inventory__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link inventory__link select" href="#"
+                >Meu Estoque</a
+              >
+            </li>
+            <li class="products__item">
+              <a class="products__link inventory__link" href="#"
+                >Estoque Vendido</a
+              >
+            </li>
+          </ul>
+          <a class="button button--md inventory__btn">Adicionar Material</a>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por produtos"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+
+
+        </div>
+      </header>
+
+      <!--Modal info-->
+      <div id="fadeInventory" class="hide modal__fade"></div>
+      <div id="modalInventory" class="hide modal">
+        <div class="modal__body modalInventory__body">
+          <header class="modalInventory__header">
+            <img
+              class="modalInventory__img"
+              src="{% static 'img/dashboard/fruits/resto_frutas.jpg' %}"
+              alt=""
+            />
+            <h6 class="modalInventory__title">Resto de frutas</h6>
+            <button id="close-modal-inventory" class="modal__btn">
+              Fechar
+            </button>
+          </header>
+
+          <div class="modalInventory__content">
+            <div class="modalInventory__info">
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Lote</h6>
+                <p class="modalInventory-item__subtitle">051248</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Quantidade produzida</h6>
+                <p class="modalInventory-item__subtitle">1000kg</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Data de Colheita</h6>
+                <p class="modalInventory-item__subtitle">25/05/2022</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">
+                  Gastos com a Produção
+                </h6>
+                <p class="modalInventory-item__subtitle">R$ 500,00</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Valor do Frete</h6>
+                <p class="modalInventory-item__subtitle">R$ 200,00</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">
+                  Valor de Venda (estimado)
+                </h6>
+                <p class="modalInventory-item__subtitle">R$ 5.560,00</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Temperatura</h6>
+                <p class="modalInventory-item__subtitle">3°C</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Percentual de Perda</h6>
+                <p class="modalInventory-item__subtitle">Até 1,5%</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">
+                  Lucro Mín a ser Obtido
+                </h6>
+                <p class="modalInventory-item__subtitle">R$ 4.776,60</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">
+                  Lucro Máx a ser Obtido
+                </h6>
+                <p class="modalInventory-item__subtitle">R$ 4.860,00</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Lucro Máx - Min</h6>
+                <p class="modalInventory-item__subtitle">R$ 83,4</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Dias Armazenados</h6>
+                <p class="modalInventory-item__subtitle">63</p>
+              </div>
+            </div>
+
+            <div class="modalInventory__texts">
+              <div class="texts__item-text">
+                <h6 class="item-text__title">Colheita</h6>
+                <p class="item-text__text">
+                  A colheita da maçã deve ser realizada manualmente por meio de
+                  uma ligeira torção, de maneira que o pedúnculo saia com
+                  a fruta. Deve-se colher frutos sadios, em repasses, e com
+                  estado de maturação adequado, colhidos sem folhas para
+                  evitar riscos de infecção.
+                </p>
+              </div>
+
+              <div class="texts__item-text">
+                <h6 class="item-text__title">Ponto de Colheita</h6>
+                <p class="item-text__text">
+                  A maturação, o amadurecimento e a senescência são estágios
+                  sequenciais, que ocorrem durante a vida de uma fruta. O
+                  aumento relativamente rápido da taxa respiratória
+                  (climatérico) e o aumento na síntese de etileno são as
+                  principais alterações fisiológicas que ocorrem durante a
+                  maturação de maçãs.
+                </p>
+              </div>
+
+              <div class="texts__item-text">
+                <h6 class="item-text__title">Armazenamento</h6>
+                <p class="item-text__text">
+                  O armazenamento refrigerado é o método mais utilizado
+                  para preservação das frutas após a colheita. Consiste
+                  basicamente na colocação destas em câmaras com baixa
+                  temperatura e alta umidade do ar. Neste sistema é diminuída a
+                  respiração e a transpiração das frutas, bem como retardado o
+                  processo de senescência e o desenvolvimento de patógenos
+                  causadores de podridão.
+                </p>
+              </div>
+
+              <div class="texts__item-text">
+                <h6 class="item-text__title">Transporte</h6>
+                <p class="item-text__text">
+                  Deve-se evitar a exposição das frutas colhidas ao sol
+                  transportando-as o mais rápido possível para a central de
+                  embalagem, procurando não transportar meia carga para evitar
+                  que a fruta fique solta e ocorram batidas. Quando o transporte
+                  é realizado a longas distâncias, deve-se cobrir com lona clara
+                  ou usar caminhões frigoríficos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Modal form-->
+      <div id="fadeNewInventory" class="hide modal__fade"></div>
+      <div id="modalNewInventory" class="hide modal modal--modalNewInventory">
+        <div class="modal__body modalInventory__body">
+          <div class="modalInventory__content">
+            <h6 class="inventory__title">
+              Cadastro de material
+            </h6>
+            <div class="modalInventory__info">
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="email"
+                  >Material</label
+                >
+                <select class="input input--green" name="email">
+                  <option value="Selecione seu produto">
+                    Digite o nome do material
+                  </option>
+                  <option value="Selecione seu produto">Resto de frutas</option>
+                  <option value="Selecione seu produto">Migalhas de pão</option>
+                  <option value="Selecione seu produto">Casca de ovo</option>
+                </select>
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="quantidade"
+                  >Quantidade Disponivel (KG)</label
+                >
+                <input
+                  class="input input--green"
+                  type="number"
+                  name="quantidade"
+                  placeholder="Insira a quantidade em Kg"
+                  required
+                />
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="venda"
+                  >Valor(R$)</label
+                >
+                <input
+                  class="input input--green"
+                  type="number"
+                  name="venda"
+                  placeholder="Digite o valor por kg"
+                  required
+                />
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="frete"
+                  >Lote</label
+                >
+                <input
+                  class="input input--green"
+                  type="number"
+                  name="frete"
+                  placeholder="Informe o N° do lote"
+                  required
+                />
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="data"
+                  >Data Inicial</label
+                >
+                <input
+                  class="input input--green"
+                  type="date"
+                  name="data"
+                  placeholder="Informe um valor em R$"
+                  required
+                />
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="data"
+                  >Validade</label
+                >
+                <input
+                  class="input input--green"
+                  type="date"
+                  name="data"
+                  placeholder="Informe um valor em R$"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="modalInventory__btn-box">
+              <button id="" class="modal__btn_confirm">Cadastrar</button>
+              <button id="close-modal-newinventory" class="modal__btn_close">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inventory__content">
+        <div class="inventory__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="inventory__img"
+                src="../assets/img/dashboard/fruits/resto_frutas.jpg"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="inventory__title">Resto de frutas</h6>
+              <div class="inventory__subtitle">
+                <p>Lote: 012503</p>
+                <p>Data 25/05/2022</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__money">
+              <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="inventory__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="inventory__img"
+                src="../assets/img/dashboard/fruits/migalhas_pao.png"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="inventory__title">Migalhas de pão</h6>
+              <div class="inventory__subtitle">
+                <p>Lote: 012504</p>
+                <p>Data 29/05/2022</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__money">
+              <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="inventory__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="inventory__img"
+                src="../assets/img/dashboard/fruits/casca_ovo.png"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="inventory__title">Casca de ovo</h6>
+              <div class="inventory__subtitle">
+                <p>Lote: 012509</p>
+                <p>Data 05/06/2022</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__money">
+              <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

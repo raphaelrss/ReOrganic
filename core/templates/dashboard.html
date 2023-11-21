@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+
+    <!----===== Boxicons CSS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesomen : biblioteca de ícones-->
+    <script
+      src="https://kit.fontawesome.com/8ec406ee8f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>ReOrganic</title>
+  </head>
+  <body>
+    <aside class="sidebar close">
+      <header>
+        <div class="header__logo-box">
+          <h2 class="image logo--dashboard">
+            R<span class="logo__span--dashboard">O</span>
+          </h2>
+        </div>
+
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a class="active" href="{% url 'trocas' %}">
+                <i class="bx bx-lemon icon"></i>
+                <span class="text nav-text">Trocas</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="{% url 'minhas_trocas' %}">
+                <i class="bx bx-package icon"></i>
+                <span class="text nav-text">Minhas Trocas</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="{% url 'notificacoes' %}">
+                <i class="bx bx-bell icon"></i>
+                <span class="text nav-text">Lembretes</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-chat icon"></i>
+                <span class="text nav-text">Contatos</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-news icon"></i>
+                <span class="text nav-text">Notícias</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-question-mark icon"></i>
+                <span class="text nav-text">FAQ</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="">
+            <a href="../index.html">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Modo Claro</span>
+
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </aside>
+
+    <header class="header">
+      <div class="header__img-box">
+        <img
+          class="img-box__profile-img"
+          src="https://github.com/m-abdias.png"
+          alt=""
+        />
+      </div>
+    </header>
+
+    <section class="section-Dashboard client">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation inventory__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link client__link select" href="#"
+                >Contatos</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por contatos"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+
+
+        </div>
+      </header>
+
+      <div class="inventory__content box-client__item">
+        <div class="inventory__item client__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="client__img"
+                src="../assets/img/dashboard/clients/client1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="client__title">Adriana Pereira da Silva</h6>
+              <div class="inventory__subtitle">
+                <p>Ultimo contato: 27/10/2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <i class="fa-solid fa-ellipsis-vertical icon__points"></i>
+          </div>
+        </div>
+
+        <div class="inventory__item client__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="client__img"
+                src="../assets/img/dashboard/clients/client2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="client__title">Guilherme de Araújo Freitas</h6>
+              <div class="inventory__subtitle">
+                <p>Ultimo contato: 27/10/2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <i class="fa-solid fa-ellipsis-vertical icon__points"></i>
+          </div>
+        </div>
+
+        <div class="inventory__item client__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="client__img"
+                src="../assets/img/dashboard/clients/client3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="client__title">Rafael dos Santos</h6>
+              <div class="inventory__subtitle">
+                <p>Ultimo contato: 27/10/2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <i class="fa-solid fa-ellipsis-vertical icon__points"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-Dashboard news">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link select" href="#">Notícias</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por notícias"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="news__container">
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="../assets/img/dashboard/news/news1.jpg"
+              alt="https://g1.globo.com/sp/sorocaba-jundiai/nosso-campo/noticia/2022/12/18/compostagem-ajuda-a-aproveitar-residuos-organicos.ghtml"
+            />
+          </div>
+          <div class="item__text-box">
+            <a href="https://g1.globo.com/sp/sorocaba-jundiai/nosso-campo/noticia/2022/12/18/compostagem-ajuda-a-aproveitar-residuos-organicos.ghtml">
+              <p class="text-box__subtitle">Reaproveitamento de resíduos orgânicos</p>
+              <h6 class="text-box__title">
+                Compostagem ajuda a aproveitar resíduos orgânicos
+              </h6>
+            </a>
+            <p class="text-box__date">Há 5 horas - Em G1 GLOBO</p>
+          </div>
+        </div>
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="../assets/img/dashboard/news/news2.jpg"
+              alt=""
+            />
+          </div>
+          <div class="item__text-box">
+            <a href="https://g1.globo.com/natureza/desafio-natureza/noticia/2019/02/07/compostagem-aprenda-a-transformar-seu-residuo-organico-em-adubo.ghtml">
+              <p class="text-box__subtitle">Compostagem</p>
+              <h6 class="text-box__title">
+                Aprenda a transformar seu resíduo orgânico em adubo
+              </h6>
+            </a>
+            <p class="text-box__date">Há 2 dias - Em G1 GLOBO</p>
+          </div>
+        </div>
+
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="../assets/img/dashboard/news/news3.jpg"
+              alt=""
+            />
+          </div>
+          <div class="item__text-box">
+            <a href="https://f5.folha.uol.com.br/viva-bem/2018/09/compostagem-caseira-transforma-lixo-em-adubo-e-cria-novos-habitos-alimentares.shtml">
+              <p class="text-box__subtitle">Compostagem caseira</p>
+              <h6 class="text-box__title">
+                Transforme seu lixo em adubo e crie novos hábitos alimentares
+              </h6>
+            </a>
+            <p class="text-box__date">Há 12 horas - Em FOLHA UOL</p>
+          </div>
+        </div>
+
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="../assets/img/dashboard/news/news4.jpg"
+              alt=""
+            />
+          </div>
+          <div class="item__text-box">
+            <div>
+              <p class="text-box__subtitle">Compostagem Humana?</p>
+              <h6 class="text-box__title">
+                Nova York aprova compostagem com restos humanos
+              </h6>
+            </div>
+            <p class="text-box__date">Há 24 horas - Em BBC NEWS BRASIL</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-Dashboard faq">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link select" href="#">Perguntas</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por perguntas"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="section-Dashboard__faq">
+        <div class="faq__question-box">
+          <div class="question-box__question">
+            <h6>Como deve ser o manejo no dia a dia para evitar problemas?</h6>
+            <i class="bx bx-chevron-down question-box__icon"></i>
+          </div>
+
+          <div class="question-box__answer">
+            Dois pontos são fundamentais para a boa manutenção da composteira doméstica:
+            respeitar a indicação do tipo de resíduo que deve ser colocado e sempre cobrir
+            a camada de resíduo orgânico com matéria seca, que pode ser folha, palha, serragem
+            (de madeira sem tratamento) e até papelão picado (sem cola ou tinta).
+          </div>
+        </div>
+
+        <div class="faq__question-box">
+          <div class="question-box__question">
+            <h6>O que não pode ser colocado na composteira doméstica?</h6>
+            <i class="bx bx-chevron-down question-box__icon"></i>
+          </div>
+
+          <div class="question-box__answer">
+            Alguns resíduos demoram muito tempo para se decompor, como carne,
+            derivados de leite e casca de cítricos, o que deixa o processo mais
+            lento e pode atrair bichos ou causar mal cheiro. Fezes (inclusive animal)
+            ou papel higiênico usado também não são indicadas pois podem contaminar o processo.
+          </div>
+        </div>
+
+        <div class="faq__question-box">
+          <div class="question-box__question">
+            <h6>Onde é o melhor lugar para deixar a composteira?</h6>
+            <i class="bx bx-chevron-down question-box__icon"></i>
+          </div>
+
+          <div class="question-box__answer">
+            Um local ventilado, ao abrigo da chuva, com luz e que não tenha incidência
+            direta de sol  por muito tempo. As composteiras Humi, por exemplo, são projetadas
+            para que seja possível tê-las, inclusive, dentro de apartamentos.
+          </div>
+        </div>
+
+        <div class="faq__question-box">
+          <div class="question-box__question">
+            <h6>Em quanto tempo terei composto pronto para usar como adubo?</h6>
+            <i class="bx bx-chevron-down question-box__icon"></i>
+          </div>
+
+          <div class="question-box__answer">
+            O tempo de transformação do resíduo em composto irá depender de alguns fatores,
+            como o tipo de resíduo colocado na composteira. Maior quantidade de frutas,
+            por exemplo, irá gerar composto líquido mais rápido. Mas, em média, estima-se
+            que a partir de 2 meses já é possível ter composto sólido e líquido.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'js/sidebar.js' %}"></script>
+    <script src="{% static 'js/inventory.js' %}"></script>
+    <script src="{% static 'services/script.js' %}"></script>
+    <script src="{% static 'js/modal.js' %}"></script>
+    <script src="{% static 'js/products.js' %}"></script>
+    <script src="{% static 'js/clients.js' %}"></script>
+    <script src="{% static 'js/faq.js' %}"></script>
+  </body>
+</html>

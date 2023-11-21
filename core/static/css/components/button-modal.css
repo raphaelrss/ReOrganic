@@ -1,0 +1,42 @@
+.modal__btn{
+  display: block;
+  padding: 1rem 2.4rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 1.4rem;
+  
+}
+
+.modal__btn_confirm {
+  display: block;
+  padding: 1rem 2.4rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 1.4rem;
+  
+}
+
+.modal__btn_close {
+  display: block;
+  padding: 1rem 2.4rem;
+  background-color: #BD2020;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 1.4rem;
+}
+
+
+.modal__btn:hover {
+  opacity: 1;
+}

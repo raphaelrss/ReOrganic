@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from core.models import Coleta, Entrega, Post, Troca
+
+
 # Create your views here.
 
 
@@ -25,5 +28,18 @@ def posts(request):
 
 def faq(request):
     return render(request, 'faq.html')
+
+
+def dashboard(request):
+    data = {
+        'coletas': Coleta.objects.all(),
+        'entregas': Entrega.objects.all(),
+        'posts': Post.objects.all(),
+        'minhas_trocas': Troca.objects.all(),
+    }
+
+
+
+    return render(request, 'dashboard.html', data)
 
 

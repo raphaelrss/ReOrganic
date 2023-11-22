@@ -23,6 +23,7 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('dashboard/', views.dashboard, name='dashboard'),
     path('trocas/', views.trocas, name='trocas'),
     path('minhas_trocas/', views.minhas_trocas, name='minhas_trocas'),
     path('notificacoes/', views.notifications, name='notificacoes'),

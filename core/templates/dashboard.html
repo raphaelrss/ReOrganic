@@ -28,7 +28,7 @@
       <header>
         <div class="header__logo-box">
           <h2 class="image logo--dashboard">
-            R<span class="logo__span--dashboard">O</span>
+            <span class="logo__span--dashboard"></span>
           </h2>
         </div>
 
@@ -39,42 +39,42 @@
         <div class="menu">
           <ul class="menu-links">
             <li class="nav-link">
-              <a class="active" href="{% url 'trocas' %}">
+              <a class="active" href="#">
                 <i class="bx bx-lemon icon"></i>
                 <span class="text nav-text">Trocas</span>
               </a>
             </li>
 
             <li class="nav-link">
-              <a href="{% url 'minhas_trocas' %}">
+              <a href="#">
                 <i class="bx bx-package icon"></i>
                 <span class="text nav-text">Minhas Trocas</span>
               </a>
             </li>
 
             <li class="nav-link">
-              <a href="{% url 'notificacoes' %}">
+              <a href="#">
                 <i class="bx bx-bell icon"></i>
                 <span class="text nav-text">Lembretes</span>
               </a>
             </li>
 
             <li class="nav-link">
-              <a href="{% url 'posts' %}">
+              <a href="#">
                 <i class="bx bx-chat icon"></i>
                 <span class="text nav-text">Posts</span>
               </a>
             </li>
 
-<!--            <li class="nav-link">-->
-<!--              <a href="#">-->
-<!--                <i class="bx bx-news icon"></i>-->
-<!--                <span class="text nav-text">Notícias</span>-->
-<!--              </a>-->
-<!--            </li>-->
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-news icon"></i>
+                <span class="text nav-text">Notícias</span>
+              </a>
+            </li>
 
             <li class="nav-link">
-              <a href="{% url 'faq' %}">
+              <a href="#">
                 <i class="bx bx-question-mark icon"></i>
                 <span class="text nav-text">FAQ</span>
               </a>
@@ -115,9 +115,818 @@
       </div>
     </header>
 
+    <section class="section-Dashboard products">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link select" href="#">Trocas</a>
+            </li>
+          </ul>
+        </nav>
 
-    {% block content %}
-    {% endblock %}
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por trocas"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!--Modal-->
+      <div id="fade" class="hide modal__fade"></div>
+      <div id="modal" class="hide modal">
+        <div class="modal__body">
+          <div class="modal__img-box">
+            <img
+              class="modal__img"
+              src="../assets/img/dashboard/fruits/lettuce.png"
+              alt=""
+            />
+            <button id="close-modal" class="modal__btn">Fechar</button>
+          </div>
+
+          <div class="modal__info-box">
+            <div class="info-box__info">
+              <h6 class="info__title">Temperatura de Armazenamento</h6>
+              <p class="info__text">15°C</p>
+            </div>
+
+            <div class="info-box__info">
+              <h6 class="info__title">Tempo de Armazenamento</h6>
+              <p class="info__text">3 - 4 Semanas</p>
+            </div>
+
+            <div class="info-box__info">
+              <h6 class="info__title">Umidade Relativa</h6>
+              <p class="info__text">90% - 95%</p>
+            </div>
+
+            <div class="info-box__info">
+              <h6 class="info__title">Perda de Peso</h6>
+              <p class="info__text">5,2%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="food" class="products__cards-box">
+        <!--Produtos serão adicionados nesse container via javascript buscando direto do banco de dados-->
+        <div class="inventory__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="inventory__img"
+                src="{% static 'img/dashboard/fruits/chorume.jpg' %}"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="inventory__title">Chorume/Adubo Líquido</h6>
+              <div class="inventory__subtitle">
+                <p>Status: Pronta Entrega</p>
+                <p>Data 25/10/2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__money">
+              <i class="bx bx-chat icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="inventory__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="inventory__img"
+                src="{% static 'img/dashboard/fruits/composteira_usada.jpg' %}"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="inventory__title">Composteira Usada</h6>
+              <div class="inventory__subtitle">
+                <p>Status: Buscando</p>
+                <p>Data 30/10/2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__money">
+              <i class="bx bx-chat icon"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-Dashboard inventory">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation inventory__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link inventory__link select" href="#"
+                >Minhas Trocas</a
+              >
+            </li>
+          </ul>
+          <a class="button button--md inventory__btn">Cadastrar Nova Troca</a>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por produtos"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+
+
+        </div>
+      </header>
+
+      <!--Modal info-->
+      <div id="fadeInventory" class="hide modal__fade"></div>
+      <div id="modalInventory" class="hide modal">
+        <div class="modal__body modalInventory__body">
+          <header class="modalInventory__header">
+            <img
+              class="modalInventory__img"
+              src="../assets/img/dashboard/fruits/resto_frutas.jpg"
+              alt=""
+            />
+            <h6 class="modalInventory__title">Resto de frutas</h6>
+            <button id="close-modal-inventory" class="modal__btn">
+              Fechar
+            </button>
+          </header>
+
+          <div class="modalInventory__content">
+            <div class="modalInventory__info">
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Lote</h6>
+                <p class="modalInventory-item__subtitle">051248</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Quantidade produzida</h6>
+                <p class="modalInventory-item__subtitle">1000kg</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Data de Colheita</h6>
+                <p class="modalInventory-item__subtitle">25/05/2022</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">
+                  Gastos com a Produção
+                </h6>
+                <p class="modalInventory-item__subtitle">R$ 500,00</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Valor do Frete</h6>
+                <p class="modalInventory-item__subtitle">R$ 200,00</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">
+                  Valor de Venda (estimado)
+                </h6>
+                <p class="modalInventory-item__subtitle">R$ 5.560,00</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Temperatura</h6>
+                <p class="modalInventory-item__subtitle">3°C</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Percentual de Perda</h6>
+                <p class="modalInventory-item__subtitle">Até 1,5%</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">
+                  Lucro Mín a ser Obtido
+                </h6>
+                <p class="modalInventory-item__subtitle">R$ 4.776,60</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">
+                  Lucro Máx a ser Obtido
+                </h6>
+                <p class="modalInventory-item__subtitle">R$ 4.860,00</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Lucro Máx - Min</h6>
+                <p class="modalInventory-item__subtitle">R$ 83,4</p>
+              </div>
+              <div class="modalInventory__item">
+                <h6 class="modalInventory-item__title">Dias Armazenados</h6>
+                <p class="modalInventory-item__subtitle">63</p>
+              </div>
+            </div>
+
+            <div class="modalInventory__texts">
+              <div class="texts__item-text">
+                <h6 class="item-text__title">Colheita</h6>
+                <p class="item-text__text">
+                  A colheita da maçã deve ser realizada manualmente por meio de
+                  uma ligeira torção, de maneira que o pedúnculo saia junto com
+                  a fruta. Deve-se colher frutos sadios, em repasses, e com
+                  estado de maturação adequado, sendo colhidos sem folhas para
+                  evitar riscos de infecção.
+                </p>
+              </div>
+
+              <div class="texts__item-text">
+                <h6 class="item-text__title">Ponto de Colheita</h6>
+                <p class="item-text__text">
+                  A maturação, o amadurecimento e a senescência são estágios
+                  sequenciais, que ocorrem durante a vida de uma fruta. O
+                  aumento relativamente rápido da taxa respiratória
+                  (climatérico) e o aumento na síntese de etileno são as
+                  principais alterações fisiológicas que ocorrem durante a
+                  maturação de maçãs.
+                </p>
+              </div>
+
+              <div class="texts__item-text">
+                <h6 class="item-text__title">Armazenamento</h6>
+                <p class="item-text__text">
+                  O armazenamento refrigerado tem sido o método mais utilizado
+                  para preservação das frutas após a colheita. Consiste
+                  basicamente na colocação destas em câmaras com baixa
+                  temperatura e alta umidade do ar. Neste sistema é diminuída a
+                  respiração e a transpiração das frutas, bem como retardado o
+                  processo de senescência e o desenvolvimento de patógenos
+                  causadores de podridão.
+                </p>
+              </div>
+
+              <div class="texts__item-text">
+                <h6 class="item-text__title">Transporte</h6>
+                <p class="item-text__text">
+                  Deve-se evitar a exposição das frutas colhidas ao sol
+                  transportando-as o mais rápido possível para a central de
+                  embalagem, procurando não transportar meia carga para evitar
+                  que a fruta fique solta e ocorram batidas. Quando o transporte
+                  é realizado a longas distâncias, deve-se cobrir com lona clara
+                  ou fazer uso de caminhões frigoríficos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Modal form-->
+      <div id="fadeNewInventory" class="hide modal__fade"></div>
+      <div id="modalNewInventory" class="hide modal modal--modalNewInventory">
+        <div class="modal__body modalInventory__body">
+          <div class="modalInventory__content">
+            <h6 class="inventory__title">
+              Cadastro de material
+            </h6>
+            <div class="modalInventory__info">
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="email"
+                  >Material</label
+                >
+                <select class="input input--green" name="email">
+                  <option value="Selecione seu produto">
+                    Digite o nome do material
+                  </option>
+                  <option value="Selecione seu produto">Resto de frutas</option>
+                  <option value="Selecione seu produto">Migalhas de pão</option>
+                  <option value="Selecione seu produto">Casca de ovo</option>
+                </select>
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="quantidade"
+                  >Quantidade Disponivel (KG)</label
+                >
+                <input
+                  class="input input--green"
+                  type="number"
+                  name="quantidade"
+                  placeholder="Insira a quantidade em Kg"
+                  required
+                />
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="venda"
+                  >Valor(R$)</label
+                >
+                <input
+                  class="input input--green"
+                  type="number"
+                  name="venda"
+                  placeholder="Digite o valor por kg"
+                  required
+                />
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="frete"
+                  >Lote</label
+                >
+                <input
+                  class="input input--green"
+                  type="number"
+                  name="frete"
+                  placeholder="Informe o N° do lote"
+                  required
+                />
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="data"
+                  >Data Inicial</label
+                >
+                <input
+                  class="input input--green"
+                  type="date"
+                  name="data"
+                  placeholder="Informe um valor em R$"
+                  required
+                />
+              </div>
+
+              <div class="modalInventory__input-box">
+                <label class="input-box__label" for="data"
+                  >Validade</label
+                >
+                <input
+                  class="input input--green"
+                  type="date"
+                  name="data"
+                  placeholder="Informe um valor em R$"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="modalInventory__btn-box">
+              <button id="" class="modal__btn_confirm">Cadastrar</button>
+              <button id="close-modal-newinventory" class="modal__btn_close">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inventory__content">
+        <div class="inventory__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="inventory__img"
+                src="{% static 'img/dashboard/fruits/resto_frutas.jpg' %}"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="inventory__title">Resto de frutas</h6>
+              <div class="inventory__subtitle">
+                <p>Status: Aguardando Coleta</p>
+                <p>Data 25/08/2023</p>
+              </div>
+            </div>
+          </div>
+
+<!--          <div class="inventory__icons">-->
+<!--            <div class="icon__money">-->
+<!--              <i class="fa-solid fa-dollar-sign"></i>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+
+        <div class="inventory__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="inventory__img"
+                src="{% static 'img/dashboard/fruits/terra_adubada.jpg' %}"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="inventory__title">Terra Adubada</h6>
+              <div class="inventory__subtitle">
+                <p>Status: Recebido</p>
+                <p>Data 29/07/2023</p>
+              </div>
+            </div>
+          </div>
+
+<!--          <div class="inventory__icons">-->
+<!--            <div class="icon__money">-->
+<!--              <i class="fa-solid fa-dollar-sign"></i>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+
+        <div class="inventory__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="inventory__img"
+                src="{% static 'img/dashboard/fruits/casca_ovo.png' %}"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="inventory__title">Casca de ovo</h6>
+              <div class="inventory__subtitle">
+                <p>Status: Efetuada</p>
+                <p>Data 05/06/2023</p>
+              </div>
+            </div>
+          </div>
+
+<!--          <div class="inventory__icons">-->
+<!--            <div class="icon__money">-->
+<!--              <i class="fa-solid fa-dollar-sign"></i>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+      </div>
+    </section>
+
+    <section class="section-Dashboard notification">
+      <header class="section-Dashboard__header">
+        <h5 class="notifications__title">
+          <i class="bx bx-chevron-right title__icon"></i> Notificações (2)
+        </h5>
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por Notificação"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+
+        </div>
+      </header>
+
+      <!--Modal-->
+      <div id="fadeNewNotification" class="hide modal__fade"></div>
+      <div
+        id="modalNewNotification"
+        class="hide modal modal--modalNewInventory"
+      >
+        <div class="modal__body modalInventory__body">
+          <div class="modalInventory__content">
+            <div class="modalInventory__input-box">
+              <label class="input-box__label label--xl" for="lembrete"
+                >Novo Lembrete</label
+              >
+              <input
+                class="input input--green input--negrito"
+                type="text"
+                name="lembrete"
+                placeholder="Digite sua mensagem de Lembrete"
+                required
+              />
+            </div>
+            <div class="modalInventory__btn-box">
+              <button id="" class="modal__btn_confirm">CRIAR</button>
+              <button id="close-modal-newnotification" class="modal__btn_close">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inventory__content">
+        <div class="notification__item">
+          <div class="inventory__info">
+            <div class="notification__text-box">
+              <h6 class="notification__title">
+                Resto de frutas
+              </h6>
+              <div class="notification__subtitle">
+                <p>
+                  Pessoa interessada em coletar
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__exit">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="notification__item">
+          <div class="inventory__info">
+            <div class="notification__text-box">
+              <h6 class="notification__title">Mensagem de Gabriel</h6>
+              <div class="notification__subtitle">
+                <p>Seu Cliente Gabriel mandou mensagem para você.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <div class="icon__exit">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-Dashboard client">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation inventory__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link client__link select" href="#"
+                >Posts</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por post"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+
+
+        </div>
+      </header>
+
+      <div class="news__container">
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="{% static 'img/dashboard/news/composteira.jpg' %}"
+              alt="https://g1.globo.com/sp/sorocaba-jundiai/nosso-campo/noticia/2022/12/18/compostagem-ajuda-a-aproveitar-residuos-organicos.ghtml"
+            />
+          </div>
+          <div class="item__text-box">
+            <a href="#">
+              <p class="text-box__subtitle">Fazendo sua própria composteira</p>
+              <h6 class="text-box__title">
+                Como aproveitar seus resíduos orgânicos em sua casa?
+              </h6>
+            </a>
+<!--            <p class="text-box__date">Há 5 horas - Em G1 GLOBO</p>-->
+          </div>
+        </div>
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="{% static 'img/dashboard/news/alimentos.jpg' %}"
+              alt=""
+            />
+          </div>
+          <div class="item__text-box">
+            <a href="#">
+              <p class="text-box__subtitle">Usando corretamente os resíduos</p>
+              <h6 class="text-box__title">
+                Quais alimentos posso utilizar na compostagem?
+              </h6>
+            </a>
+<!--            <p class="text-box__date">Há 2 dias - Em G1 GLOBO</p>-->
+          </div>
+        </div>
+
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="{% static 'img/dashboard/news/terra.jpg' %}"
+              alt=""
+            />
+          </div>
+          <div class="item__text-box">
+            <a href="#">
+              <p class="text-box__subtitle">Utilizando seus resultados</p>
+              <h6 class="text-box__title">
+                Como aproveitar o produto da compostagem?
+              </h6>
+            </a>
+<!--            <p class="text-box__date">Há 12 horas - Em FOLHA UOL</p>-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-Dashboard news">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link select" href="#">Notícias</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por noticias"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="news__container">
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="{% static 'img/dashboard/news/news1.jpg' %}"
+              alt="https://g1.globo.com/sp/sorocaba-jundiai/nosso-campo/noticia/2022/12/18/compostagem-ajuda-a-aproveitar-residuos-organicos.ghtml"
+            />
+          </div>
+          <div class="item__text-box">
+            <a href="https://g1.globo.com/sp/sorocaba-jundiai/nosso-campo/noticia/2022/12/18/compostagem-ajuda-a-aproveitar-residuos-organicos.ghtml">
+              <p class="text-box__subtitle">Reaproveitamento de resíduos orgânicos</p>
+              <h6 class="text-box__title">
+                Compostagem ajuda a aproveitar resíduos orgânicos
+              </h6>
+            </a>
+            <p class="text-box__date">Há 5 horas - Em G1 GLOBO</p>
+          </div>
+        </div>
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="{% static 'img/dashboard/news/news2.jpg' %}"
+              alt=""
+            />
+          </div>
+          <div class="item__text-box">
+            <a href="https://g1.globo.com/natureza/desafio-natureza/noticia/2019/02/07/compostagem-aprenda-a-transformar-seu-residuo-organico-em-adubo.ghtml">
+              <p class="text-box__subtitle">Compostagem</p>
+              <h6 class="text-box__title">
+                Aprenda a transformar seu resíduo orgânico em adubo
+              </h6>
+            </a>
+            <p class="text-box__date">Há 2 dias - Em G1 GLOBO</p>
+          </div>
+        </div>
+
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="{% static 'img/dashboard/news/news3.jpg' %}"
+              alt=""
+            />
+          </div>
+          <div class="item__text-box">
+            <a href="https://f5.folha.uol.com.br/viva-bem/2018/09/compostagem-caseira-transforma-lixo-em-adubo-e-cria-novos-habitos-alimentares.shtml">
+              <p class="text-box__subtitle">Compostagem caseira</p>
+              <h6 class="text-box__title">
+                Transforme seu lixo em adubo e crie novos hábitos alimentares
+              </h6>
+            </a>
+            <p class="text-box__date">Há 12 horas - Em FOLHA UOL</p>
+          </div>
+        </div>
+
+        <div class="news__item">
+          <div class="item__img-container">
+            <img
+              class="item__img"
+              src="{% static 'img/dashboard/news/news4.jpg' %}"
+              alt=""
+            />
+          </div>
+          <div class="item__text-box">
+            <div>
+              <p class="text-box__subtitle">Compostagem Humana?</p>
+              <h6 class="text-box__title">
+                Nova York aprova compostagem com restos humanos
+              </h6>
+            </div>
+            <p class="text-box__date">Há 24 horas - Em BBC NEWS BRASIL</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-Dashboard faq">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link select" href="#">Perguntas</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por perguntas"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="section-Dashboard__faq">
+        <div class="faq__question-box">
+          <div class="question-box__question">
+            <h6>Como deve ser o manejo no dia a dia para evitar problemas?</h6>
+            <i class="bx bx-chevron-down question-box__icon"></i>
+          </div>
+
+          <div class="question-box__answer">
+            Dois pontos são fundamentais para a boa manutenção da composteira doméstica:
+            respeitar a indicação do tipo de resíduo que deve ser colocado e sempre cobrir
+            a camada de resíduo orgânico com matéria seca, que pode ser folha, palha, serragem
+            (de madeira sem tratamento) e até papelão picado (sem cola ou tinta).
+          </div>
+        </div>
+
+        <div class="faq__question-box">
+          <div class="question-box__question">
+            <h6>O que não pode ser colocado na composteira doméstica?</h6>
+            <i class="bx bx-chevron-down question-box__icon"></i>
+          </div>
+
+          <div class="question-box__answer">
+            Alguns resíduos demoram muito tempo para se decompor, como carne,
+            derivados de leite e casca de cítricos, deixando o processo mais
+            lento e pode atrair bichos ou causar mau cheiro. Fezes (inclusive animal)
+            ou papel higiênico usado também não são indicadas, pois podem contaminar o processo.
+          </div>
+        </div>
+
+        <div class="faq__question-box">
+          <div class="question-box__question">
+            <h6>Onde é o melhor lugar para deixar a composteira?</h6>
+            <i class="bx bx-chevron-down question-box__icon"></i>
+          </div>
+
+          <div class="question-box__answer">
+            Um local ventilado, ao abrigo da chuva, com luz e que não tenha incidência
+            direta de sol por muito tempo. As composteiras Humi, por exemplo, são projetadas
+            para ser possível tê-las, inclusive, dentro de apartamentos.
+          </div>
+        </div>
+
+        <div class="faq__question-box">
+          <div class="question-box__question">
+            <h6>Em quanto tempo terei composto pronto para usar como adubo?</h6>
+            <i class="bx bx-chevron-down question-box__icon"></i>
+          </div>
+
+          <div class="question-box__answer">
+            O tempo de transformação do resíduo em composto irá depender de alguns fatores,
+            como o tipo de resíduo colocado na composteira. Maior quantidade de frutas,
+            por exemplo, irá gerar composto líquido mais rápido. Mas, em média, estima-se
+            que a partir de 2 meses já é possível ter composto sólido e líquido.
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="{% static 'js/sidebar.js' %}"></script>
     <script src="{% static 'js/inventory.js' %}"></script>

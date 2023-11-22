@@ -71,16 +71,36 @@ class Endereco(models.Model):
     numero = models.IntegerField()
     cep = models.CharField(max_length=8)
 
+    class Meta:
+        verbose_name = 'endereço'
+        verbose_name_plural = 'endereços'
+
+    def __str__(self):
+        return f'{self.logradouro} - {self.bairro} - {self.cep}'
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=50)
     descricao = models.CharField(max_length=255)
+
+    class Meta:
+        verbose_name = 'categoria'
+        verbose_name_plural = 'categorias'
+
+    def __str__(self):
+        return self.nome
 
 
 class Compost(models.Model):
     usuario_id = models.ForeignKey(User, on_delete=models.CASCADE)
     data_nascimento = models.DateField()
     endereco_id = models.ForeignKey(Endereco, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'compost'
+        verbose_name_plural = 'composts'
+
+    def __str__(self):
+        return f'{self.usuario_id.id} - {self.usuario_id.get_full_name()}'
 
 
 class Post(models.Model):
@@ -89,21 +109,49 @@ class Post(models.Model):
     titulo = models.CharField(max_length=50)
     conteudo = models.TextField()
 
+    class Meta:
+        verbose_name = 'post'
+        verbose_name_plural = 'posts'
+
+    def __str__(self):
+        return f'{self.responsavel_id} - {self.titulo}'
+
 
 class Entrega(models.Model):
     responsavel_id = models.ForeignKey(Compost, on_delete=models.CASCADE)
     descricao = models.TextField()
+
+    class Meta:
+        verbose_name = 'entrega'
+        verbose_name_plural = 'entregas'
+
+    def __str__(self):
+        return f'{self.descricao[:10]}'
 
 
 class Coleta(models.Model):
     responsavel_id = models.ForeignKey(Compost, on_delete=models.CASCADE)
     descricao = models.TextField()
 
+    class Meta:
+        verbose_name = 'coleta'
+        verbose_name_plural = 'coletas'
+
+    def __str__(self):
+        return f'{self.descricao[:10]}'
+
 
 class Troca(models.Model):
     coleta_id = models.ForeignKey(Coleta, on_delete=models.CASCADE)
     entrega_id = models.ForeignKey(Entrega, on_delete=models.CASCADE)
     data_troca = models.DateTimeField(auto_created=True)
+
+    class Meta:
+        verbose_name = 'troca'
+        verbose_name_plural = 'trocas'
+
+    def __str__(self):
+        return f'{self.data_troca} - {self.coleta_id} - {self.entrega_id}'
 
 
 class Avaliacao(models.Model):
@@ -112,3 +160,9 @@ class Avaliacao(models.Model):
     post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
     descricao = models.TextField()
 
+    class Meta:
+        verbose_name = 'avaliação'
+        verbose_name_plural = 'avaliações'
+
+    def __str__(self):
+        return f'{self.troca_id} - {self.responsavel_id}'

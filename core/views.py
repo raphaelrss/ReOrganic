@@ -18,3 +18,12 @@ def minhas_trocas(request):
 def notifications(request):
     return render(request, 'notifications.html')
 
+
+def posts(request):
+    return render(request, 'posts.html')
+
+
+def faq(request):
+    return render(request, 'faq.html')
+
+

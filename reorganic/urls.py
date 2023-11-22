@@ -26,4 +26,6 @@ urlpatterns = [
     path('trocas/', views.trocas, name='trocas'),
     path('minhas_trocas/', views.minhas_trocas, name='minhas_trocas'),
     path('notificacoes/', views.notifications, name='notificacoes'),
+    path('posts/', views.posts, name='posts'),
+    path('faq/', views.faq, name='faq'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

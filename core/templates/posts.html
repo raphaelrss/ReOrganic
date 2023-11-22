@@ -1,0 +1,103 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="section-Dashboard client">
+      <header class="section-Dashboard__header">
+        <nav class="products__navegation inventory__navegation">
+          <ul class="products__list">
+            <li class="products__item">
+              <a class="products__link client__link select" href="#"
+                >Contatos</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="products__search-box search-box">
+          <div class="search-box__search">
+            <input
+              class="products__search-text search-text"
+              type="text"
+              placeholder="Pesquise por contatos"
+            />
+            <a class="products__search-btn search-btn" href="#">
+              <i class="bx bx-search"></i>
+            </a>
+          </div>
+
+
+        </div>
+      </header>
+
+      <div class="inventory__content box-client__item">
+        <div class="inventory__item client__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="client__img"
+                src="../assets/img/dashboard/clients/client1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="client__title">Adriana Pereira da Silva</h6>
+              <div class="inventory__subtitle">
+                <p>Ultimo contato: 27/10/2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <i class="fa-solid fa-ellipsis-vertical icon__points"></i>
+          </div>
+        </div>
+
+        <div class="inventory__item client__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="client__img"
+                src="../assets/img/dashboard/clients/client2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="client__title">Guilherme de Araújo Freitas</h6>
+              <div class="inventory__subtitle">
+                <p>Ultimo contato: 27/10/2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <i class="fa-solid fa-ellipsis-vertical icon__points"></i>
+          </div>
+        </div>
+
+        <div class="inventory__item client__item">
+          <div class="inventory__info">
+            <div class="inventory__img-box">
+              <img
+                class="client__img"
+                src="../assets/img/dashboard/clients/client3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="inventory__text-box">
+              <h6 class="client__title">Rafael dos Santos</h6>
+              <div class="inventory__subtitle">
+                <p>Ultimo contato: 27/10/2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory__icons">
+            <i class="fa-solid fa-ellipsis-vertical icon__points"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
